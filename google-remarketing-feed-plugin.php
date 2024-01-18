@@ -77,8 +77,6 @@ function my_google_remarketing_settings_page_html() {
     <?php
 }
 
-<?php
-}
 
 // Function to generate the CSV feed
 	function generate_google_remarketing_feed($categories = array(), $outputFilename = 'google_remarketing_feeds') {

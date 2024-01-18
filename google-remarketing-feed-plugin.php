@@ -8,7 +8,18 @@ Author: Muzamil Chaudhery
 Author URI: https://chaudhery.com/
 
 */
+add_action('admin_enqueue_scripts', 'enqueue_custom_scripts');
 
+function enqueue_custom_scripts() {
+    // Enqueue the JavaScript file
+    wp_enqueue_script('custom-scripts', plugin_dir_url(__FILE__) . 'scripts.js', array('jquery'), null, true);
+
+    // Pass dynamic data to the script
+    wp_localize_script('custom-scripts', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'generate_feed_nonce' => wp_create_nonce('generate_feed_nonce'),
+    ));
+}
 add_action('admin_enqueue_scripts', 'enqueue_custom_styles');
 
 function enqueue_custom_styles() {

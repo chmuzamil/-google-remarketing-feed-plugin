@@ -3,16 +3,13 @@
 Plugin Name: Custom Feed Generaotr for google
 Plugin URI: https://github.com/chmuzamil/google-remarketing-feed-plugin
 Description: This plugin generates a CSV feed for Google Remarketing.
-Version: 1.0
+Version: 1.1
 Author: Muzamil Chaudhery
 Author URI: https://chaudhery.com/
 
 */
 
-require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-require_once ABSPATH . 'wp-admin/includes/file.php';
-require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
 require_once plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;

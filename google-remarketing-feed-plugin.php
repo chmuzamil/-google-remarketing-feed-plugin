@@ -9,7 +9,11 @@ Author URI: https://chaudhery.com/
 
 */
 
+add_action('admin_enqueue_scripts', 'enqueue_custom_styles');
 
+function enqueue_custom_styles() {
+    wp_enqueue_style('custom-styles', plugin_dir_url(__FILE__) . 'styles.css');
+}
 require_once plugin_dir_path(__FILE__) . 'plugin-update-checker/plugin-update-checker.php';
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
@@ -149,31 +153,6 @@ function my_admin_footer_script() {
 				});
         });
     </script>
-<style>
-        #progress-bar-container {
-			border: 1px solid #135e96;
-  			border-radius: 20px;
-    		padding: 4px;
-			margin:20px 40px;
-            text-align: center;
-			width: 400px;
-        }
-	#success-message{
-		margin: 0 40px;
-  		text-align: center;
-  		width: 400px;
-		font-size:20px;
-		line-height:1;
-		font-weight:500;
-		margin:0 40px;
-	}
-        #progress-bar {
-            width: 0%;
-            height: 20px;
-            background-color: #135e96;
-			border-radius: 20px
-        }
-    </style>
     <?php
 }
 
